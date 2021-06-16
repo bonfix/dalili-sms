@@ -54,7 +54,7 @@ class DaliliSmsController
     private $nextSmsOut;
 
     //TEST
-    private $replySms = false;
+    private $replySms = true;
     private $returnSmsContentResponse = true;
     /**
      * @var bool
