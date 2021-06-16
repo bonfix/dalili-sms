@@ -20,7 +20,7 @@ class CreateSmsOutTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists($this->tableName);
+        //Schema::dropIfExists($this->tableName);
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->integer('menu_id')->unsigned();
