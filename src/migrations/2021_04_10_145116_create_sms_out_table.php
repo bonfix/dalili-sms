@@ -27,7 +27,7 @@ class CreateSmsOutTable extends Migration
             $table->integer('user_id');
             $table->integer('page')->nullable();
             $table->string('next_menu', 255)->nullable();
-            $table->json('cache')->nullable();
+            $table->text('cache')->nullable();
             $table->boolean('is_sent')->default(0);
             $table->boolean('is_delivered')->default(0);
             $table->integer('prev_item')->nullable();
