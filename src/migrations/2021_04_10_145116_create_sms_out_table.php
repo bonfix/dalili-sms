@@ -46,5 +46,6 @@ class CreateSmsOutTable extends Migration
     public function down()
     {
         Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists(SmsMenu::TABLE_NAME);
     }
 }
