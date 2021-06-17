@@ -8,4 +8,4 @@ Route::group(['prefix' => 'api/v2'], function () {
 //    Route::get('/sms', 'Bonfix\DaliliSms\DaliliSmsController@smsIn');
 });
 //Route::get('/sms', 'Bonfix\DaliliSms\DaliliSmsController@testMethod');
-    Route::get('/sms', 'Bonfix\DaliliSms\DaliliSmsController@smsIn');
+    Route::get('/sms', 'Bonfix\DaliliSms\DaliliSmsController@testMethod');

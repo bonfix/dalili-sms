@@ -70,15 +70,13 @@ class DaliliSmsController
         $this->shopService = $shopService;
     }
 
-    public function testMethod()
+    public function testMethod(Request $request)
     {
-       /* $this->request->per_page = 10;
-        $this->request->country = 3;
-        $offers = $this->menuShops($this->getMenuByName(SmsHelper::MENU_SHOPS_MAIN));//->toArray($this->request);
-        //dd($offers);*/
-        //dd(phpinfo());
-        //$res = $this->sendSms('254793076592', 'TEst-Msg');
-        dd("TEST");
+        try {
+            return smsIn($request);
+        }catch (\Exception $exception){
+            dd($exception);
+        }
     }
 
     private function isApiKeyValid($key){
