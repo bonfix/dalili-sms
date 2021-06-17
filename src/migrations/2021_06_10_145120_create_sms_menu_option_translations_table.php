@@ -20,7 +20,7 @@ class CreateSmsMenuOptionTranslationsTable extends Migration
      */
     public function up()
     {
-        $this->down();
+        //$this->down();
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->integer('menu_option_id')->unsigned();
