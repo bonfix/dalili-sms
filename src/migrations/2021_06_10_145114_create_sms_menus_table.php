@@ -19,6 +19,7 @@ class CreateSmsMenusTable extends Migration
      */
     public function up()
     {
+        $this->down();
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
