@@ -73,7 +73,7 @@ class DaliliSmsController
     public function testMethod(Request $request)
     {
         try {
-            return smsIn($request);
+            return $this->smsIn($request);
         }catch (\Exception $exception){
             dd($exception);
         }
@@ -96,7 +96,7 @@ class DaliliSmsController
             return response("Error! API key is not given or is invalid!", 401)
                 ->header('Content-Type', 'text/plain');
         }
-        Log::info($request);
+        //Log::info($request);
         $reponseMsgs = [];
         $phone = $request->msisdn;
         $this->receivedSms = trim($request->message);
@@ -257,6 +257,9 @@ class DaliliSmsController
             'isInvalid' =>$isInvalid
         ]);
         $this->setOption();
+        //update user
+        $this->user->last_request_time = Carbon::now();
+        $this->user->save();
     }
     public function resendOutboundSms(){
         $this->nextSmsOut = SmsOut::create([
